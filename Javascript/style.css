@@ -1,0 +1,12 @@
+        div {
+            border: 1px dotted blue;
+        }
+        #div2 {
+            background-color: aquamarine;
+        }
+        .engras {
+            font-weight: bold;
+        }
+        .enrouge {
+            color: red;
+        }
