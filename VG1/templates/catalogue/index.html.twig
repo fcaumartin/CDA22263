@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% for categorie in liste %}
+        <div>
+        <a href="/produits/{{ categorie.id }}">
+            {{ categorie.nom }}
+        </a>
+        </div>
+    {% endfor %}
+{% endblock %}

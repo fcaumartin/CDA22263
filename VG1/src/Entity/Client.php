@@ -25,6 +25,9 @@ class Client
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $adresse = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $cp = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class Client
     public function setAdresse(?string $adresse): self
     {
         $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getCp(): ?string
+    {
+        return $this->cp;
+    }
+
+    public function setCp(?string $cp): self
+    {
+        $this->cp = $cp;
 
         return $this;
     }

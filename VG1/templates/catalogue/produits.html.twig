@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div>
+        {{ categorie.nom }}
+    </div>
+    <hr>
+    {% for produit in categorie.produits %}
+        <div>
+            {{ produit.nom }}
+            {{ produit.prix }}
+
+        </div>
+    {% endfor %}
+{% endblock %}
