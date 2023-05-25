@@ -3,10 +3,10 @@
 
 {% block body %}
     <div>
-        {{ categorie.nom }}
+        {{ souscategorie.nom }}
     </div>
     <hr>
-    {% for produit in categorie.produits %}
+    {% for produit in souscategorie.produits %}
         <div>
             {{ produit.nom }}
             {{ produit.prix }}

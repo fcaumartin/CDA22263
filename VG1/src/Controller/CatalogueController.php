@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Categorie;
+use App\Entity\SousCategorie;
 use App\Repository\CategorieRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,15 +22,24 @@ class CatalogueController extends AbstractController
         ]);
     }
 
-    #[Route('/produits/{categorie}', name: 'app_catalogue_produits', methods: ["GET"])]
-    public function produits(Categorie $categorie): Response
+    #[Route('/souscategories/{categorie}', name: 'app_catalogue_souscategories')]
+    public function souscategories(Categorie $categorie): Response
+    {
+
+        return $this->render('catalogue/souscategories.html.twig', [
+            'categorie' => $categorie,
+        ]);
+    }
+
+    #[Route('/produits/{souscategorie}', name: 'app_catalogue_produits', methods: ["GET"])]
+    public function produits(SousCategorie $souscategorie): Response
     {
         // $liste = $repo->findAll();
         // $categorie = $repo->find($id);
         // dd($categorie);
 
         return $this->render('catalogue/produits.html.twig', [
-            'categorie' => $categorie
+            'souscategorie' => $souscategorie
         ]);
     }
 }

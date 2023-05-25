@@ -24,9 +24,9 @@ class Produit
     private ?string $prix = null;
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Categorie $categorie = null;
+    private ?SousCategorie $sousCategorie = null;
 
+   
     public function getId(): ?int
     {
         return $this->id;
@@ -68,15 +68,17 @@ class Produit
         return $this;
     }
 
-    public function getCategorie(): ?Categorie
+    public function getSousCategorie(): ?SousCategorie
     {
-        return $this->categorie;
+        return $this->sousCategorie;
     }
 
-    public function setCategorie(?Categorie $categorie): self
+    public function setSousCategorie(?SousCategorie $sousCategorie): self
     {
-        $this->categorie = $categorie;
+        $this->sousCategorie = $sousCategorie;
 
         return $this;
     }
+
+  
 }
