@@ -10,6 +10,7 @@
         <div>
             {{ produit.nom }}
             {{ produit.prix }}
+            <a href="/add/{{ produit.id }}" class="btn btn-success">Ajouter</a>
 
         </div>
     {% endfor %}

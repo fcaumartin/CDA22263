@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<h1>Panier</h1>
+
+{% for produit in panier %}
+    <div>
+        {{ produit.nom }}
+        {{ produit.quantite }}
+    </div>
+{% endfor %}
+{% endblock %}
