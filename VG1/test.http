@@ -1,0 +1,53 @@
+GET https://127.0.0.1:8000/api/produits
+Accept: application/json
+
+
+###
+
+GET https://127.0.0.1:8000/api/produits/11
+Accept: application/json
+
+
+###
+
+
+POST https://127.0.0.1:8000/api/produits
+Content-Type: application/json
+Accept: application/json
+
+{
+    "nom": "test",
+    "prix": "12.56",
+    "sousCategorie": "/api/sous_categories/1"
+}
+
+
+###
+
+DELETE https://127.0.0.1:8000/api/produits/12
+Accept: application/json
+
+
+
+###
+
+
+PATCH https://127.0.0.1:8000/api/produits/11
+Content-Type: application/merge-patch+json
+Accept: application/json
+
+{
+    "nom": "modification666",
+    "prix": "666"
+}
+
+###
+
+PUT https://127.0.0.1:8000/api/produits/13
+Content-Type: application/json
+Accept: application/json
+
+{
+    "nom": "modification777",
+    "prix": "777"
+}
