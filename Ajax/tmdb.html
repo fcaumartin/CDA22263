@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="recherche">
+    <button id="btn">Recherchez</button>
+    <div id="resultat"></div>
+</body>
+</html>
+
+<script>
+
+    document.querySelector("#btn").addEventListener("click", () => {
+        let recherche = document.querySelector("#recherche").value;
+        fetch("http://api.themoviedb.org/3/search/movie?api_key=f33cd318f5135dba306176c13104506a&query=" + recherche)
+        .then( (response) => {
+            response.json().then ( (data) => {
+                document.querySelector("#resultat").innerHTML = "";
+                for (const film of data.results) {
+                    console.log(film.title)
+                    document.querySelector("#resultat").innerHTML += "<img src='http://image.tmdb.org/t/p/w185" + film.poster_path + "' />"
+                }
+            })
+        } )
+
+
+    })
+
+
+
+</script>

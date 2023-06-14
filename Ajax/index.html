@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <button id="btn1">Clique 1</button>
+        <button id="btn2">Clique 2</button>
+        <div id="div1"></div>
+    </body>
+    </html>
+
+    <script>
+
+            document.querySelector("#btn1").addEventListener("click", async () => {
+
+                let response = await fetch("partielle1.php");
+                let data = await response.text();
+                document.querySelector("#div1").innerHTML = data;
+            });
+
+            document.querySelector("#btn2").addEventListener("click", async () => {
+
+                let response = await fetch("partielle2.php");
+                let data = await response.text();
+                document.querySelector("#div1").innerHTML = data;
+            });
+        
+
+    </script>

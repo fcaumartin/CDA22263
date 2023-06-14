@@ -10,14 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class TestController extends AbstractController
 {
     #[Route('/test', name: 'app_home')]
-    public function app_home(ProduitRepository $repo): Response
+    public function app_home(): Response
     {
-        //$liste = $repo->findByPrix(1000);
-
-        //dd($liste);
 
         return $this->render('test/index.html.twig', [
-            'controller_name' => 'TestController',
         ]);
     }
 
