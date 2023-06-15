@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Form from "./Composants/Form"
-import List from "./Composants/List"
+
+import "@picocss/pico"
 
 function App2() {
 
@@ -18,7 +18,7 @@ function App2() {
   
 
   return (
-    <div>
+    <div class="container">
       <input type="text" value={texte} onChange={handleChange}/>
       <button onClick={handleClick}>
         Ajouter
